@@ -56,7 +56,7 @@ config.set('vendor_dependencies', [
 // ------------------------------------
 const paths = (() => {
   const base    = [config.get('path_project')],
-        resolve = path.resolve;
+    resolve = path.resolve;
 
   const project = (...args) => resolve.apply(resolve, [...base, ...args]);
 

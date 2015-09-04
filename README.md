@@ -73,17 +73,8 @@ Runs all tests for the application. When run in a production build, failing test
 #### `npm run test:unit`
 Similar to `npm run test`, but only runs unit tests. In development mode this will run in watch mode and re-run individual test files when they change.
 
-#### `npm run test:server`
-Runs the small test suite in `~/server/scripts/test.js`. This will ideally be expanded in the future to instead act as an entry point similar to what exists for client-side tests.
-
-#### `npm run server:start`
-Kicks off the Koa server (defaults to `localhost:4000`).
-
-#### `npm run server:dev`
-Kicks off the Koa server with Nodemon so any file changes in ~/server will trigger a server restart.
-
 #### `npm run deploy`
-Helper script to run tests and then, on success, compile your application. Server tests that rely on the compiled server bundle will be run after compilation finishes.
+Helper script to run tests and then, on success, compile your application.
 
 ### Configuration
 

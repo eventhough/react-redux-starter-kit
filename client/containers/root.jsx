@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 import configureStore from 'stores';
@@ -9,24 +9,28 @@ import createDevToolsWindow from 'utils';
 const store = configureStore();
 
 export default class Root extends React.Component {
-  constructor () {
+  static propTypes = {
+    initialState: PropTypes.object,
+  }
+
+  constructor() {
     super();
   }
 
-  renderDevTools () {
+  renderDevTools() {
     if (__DEBUG_NW__) {
       createDevToolsWindow(store);
       return null;
-    } else {
-      return (
-        <DebugPanel top left bottom key='debugPanel'>
-          <DevTools store={store} monitor={LogMonitor} />
-        </DebugPanel>
-      );
     }
+
+    return (
+      <DebugPanel top left bottom key="debugPanel">
+        <DevTools store={store} monitor={LogMonitor} />
+      </DebugPanel>
+    );
   }
 
-  renderRouter () {
+  renderRouter() {
     const routerState = this.props.initialState || this.props;
 
     return (
@@ -36,7 +40,7 @@ export default class Root extends React.Component {
     );
   }
 
-  render () {
+  render() {
     let debugTools = null;
 
     if (__DEBUG__) {

@@ -2,7 +2,7 @@ import { compose, createStore } from 'redux';
 import { devTools } from 'redux-devtools';
 import rootReducer from 'reducers';
 
-var createStoreWithMiddleware;
+let createStoreWithMiddleware;
 
 if (__DEBUG__) {
   createStoreWithMiddleware = compose(devTools())(createStore);
@@ -10,7 +10,7 @@ if (__DEBUG__) {
   createStoreWithMiddleware = createStore;
 }
 
-export default function configureStore (initialState) {
+export default function configureStore(initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState);
 
   if (module.hot) {

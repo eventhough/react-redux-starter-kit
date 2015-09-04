@@ -5,6 +5,6 @@ import HomeView    from 'views/home';
 
 export default (
   <Route component={CoreLayout}>
-    <Route name='home' path='/' component={HomeView} />
+    <Route name="home" path="/" component={HomeView} />
   </Route>
 );

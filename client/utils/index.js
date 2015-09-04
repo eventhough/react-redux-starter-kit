@@ -2,15 +2,15 @@ import assign from 'object-assign';
 import React from 'react';
 import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
 
-export function createConstants (...constants) {
+export function createConstants(...constants) {
   return constants.reduce((acc, constant) => {
     return assign(acc, {
-      [constant] : constant
+      [constant]: constant,
     });
   }, {});
 }
 
-export function createReducer (initialState, reducerMap) {
+export function createReducer(initialState, reducerMap) {
   return (state = initialState, action) => {
     const reducer = reducerMap[action.type];
 
@@ -18,7 +18,7 @@ export function createReducer (initialState, reducerMap) {
   };
 }
 
-export default function createDevToolsWindow (store) {
+export default function createDevToolsWindow(store) {
   const win = window.open(
     null,
     'redux-devtools', // give it a name so it reuses the same window
