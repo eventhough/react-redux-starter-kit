@@ -17,7 +17,7 @@ const webpackConfig = {
   },
   output : {
     filename   : '[name].[hash].js',
-    path       : paths.dist('client'),
+    path       : paths.dist(),
     publicPath : '/'
   },
   plugins : [
